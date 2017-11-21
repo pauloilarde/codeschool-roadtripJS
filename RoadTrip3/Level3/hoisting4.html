@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <script>
+         function getMysteryNumber() {
+            console.log(chooseMystery());
+            var chooseMystery = function () {
+               return 12;
+            }
+
+
+            var chooseMystery = function () {
+               return 9;
+            }
+         }
+         getMysteryNumber(); // Uncaught TypeError: chooseMystery is not a function
+      </script>
+   </body>
+</html>
