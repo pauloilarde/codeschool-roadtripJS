@@ -6,10 +6,20 @@
    </head>
    <body>
       <script>
-         var greeting = function () {
-            alert('Thanks for visiting the Badlands! \n' +
-                   'We hope your stay is... better than most.');
-         };
+         var greeting;
+         var newCustomer = false;
+
+         if(newCustomer){
+            greeting = function () {
+               alert('Thanks for visiting the Badlands! \n' +
+                      'We hope your stay is... better than most.');
+            };
+         } else {
+            greeting = function () {
+               alert('Welcome back to the Badlands! \n' +
+                     'Guess they are not so bad huh?');
+            };
+         }
 
          closeTerminal(greeting);
 
