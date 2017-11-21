@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <script>
+         function testClosure() {
+            var x = 4;
+            function closeX() {
+               return x;
+            }
+            return closeX;
+         }
+
+         var testLocalX = testClosure();
+
+         console.log(testLocalX());
+      </script>
+   </body>
+</html>

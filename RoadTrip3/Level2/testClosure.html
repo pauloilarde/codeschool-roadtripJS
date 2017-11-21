@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <script>
+         function testClosure() {
+            var x = 4;
+            return x;
+         }
+         console.log(testClosure()); // 4
+         console.log(x); //  Uncaught ReferenceError: x is not defined
+      </script>
+   </body>
+</html>
