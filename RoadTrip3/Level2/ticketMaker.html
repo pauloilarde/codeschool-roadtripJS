@@ -7,24 +7,22 @@
    <body>
       <script>
          function buildCoveTicketMaker(transport) {
-
+            var passengerNumber = 0;
             return function (name) {
+               passengerNumber++;
                alert("Here is your transportation via " + transport + ".\n" +
-                     "Welcome to the Cold Closures Cove " + name + "!");
+                     "Welcome to the Cold Closures Cove " + name + "!" + "\n" +
+                     "You are passenger #" + passengerNumber + ".");
             }
          }
 
          var getSubmarineTicket = buildCoveTicketMaker("Submarine");
 
-         var getBattleshipTicket = buildCoveTicketMaker("Battleship");
-
-         var getGiantSeagullTicket = buildCoveTicketMaker("Giant Seagull");
-
          getSubmarineTicket("Jon");
 
-         getBattleshipTicket("Ryu");
+         getSubmarineTicket("Ryu");
 
-         getGiantSeagullTicket("Ken");
+         getSubmarineTicket("Ken");
 
       </script>
    </body>
