@@ -7,16 +7,15 @@
    <body>
       <script>
          function assignTorpedo(name, passengerArray) {
-            var torpedoAssignment;
+
             for (var i = 0; i < passengerArray.length; i++){
                if(passengerArray[i] == name){
-                  torpedoAssignment = function () {
+                  return function () {
                      alert("Ahoy, " + name + "!\n" +
                            "Man your post at Torpedo #" + (i+1) + "!");
                   };
                }
             }
-            return torpedoAssignment;
          }
          var subPassengers = ['Leia', 'Luke', 'Han', 'Chewie', 'Yoda', 'R2-D2', 'C-3P0', 'Boba'];
          var giveAssignment = assignTorpedo('Chewie', subPassengers);
