@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <script>
+         function capacityStatus(numPassengers, capacity) {
+            if(numPassengers == capacity){
+               noSeats();
+            } else {
+               seatsAvail();
+            }
+
+            function noSeats() {
+               alert('No seats left!');
+               return false;
+            }
+
+            function seatsAvail() {
+               alert('There are ' + (capacity - numPassengers) + " seats left!");
+            }
+         }
+
+         capacityStatus(40, 60); // Uncaught TypeError: noSeats is not a function
+      </script>
+   </body>
+</html>
