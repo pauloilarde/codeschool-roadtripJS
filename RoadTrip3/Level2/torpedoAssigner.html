@@ -6,20 +6,23 @@
    </head>
    <body>
       <script>
-         function assignTorpedo(name, passengerArray) {
 
-            for (var i = 0; i < passengerArray.length; i++){
-               if(passengerArray[i] == name){
-                  return function () {
+         function makeTorpedoAssigner(passengerArray) {
+
+            return function (name) {
+               for (var i = 0; i < passengerArray.length; i++) {
+                  if(passengerArray[i] == name){
                      alert("Ahoy, " + name + "!\n" +
-                           "Man your post at Torpedo #" + (i+1) + "!");
-                  };
+                           "Man your post torpedo at Torpedo #" + (i + 1) + "!");
+                  }
                }
-            }
+            };
          }
          var subPassengers = ['Leia', 'Luke', 'Han', 'Chewie', 'Yoda', 'R2-D2', 'C-3P0', 'Boba'];
-         var giveAssignment = assignTorpedo('Chewie', subPassengers);
-         giveAssignment();
+
+         var getTorpedoFor = makeTorpedoAssigner(subPassengers);
+
+         getTorpedoFor('Chewie');
       </script>
    </body>
 </html>
