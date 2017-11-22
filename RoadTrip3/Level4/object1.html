@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    var booksArray = ["A origem", "Assassin's Creed"];
+      var myBox = {
+        height: 6,
+        width: 8,
+        size: 10,
+        volume: 40,
+        material: "cardboard",
+        contents: booksArray
+      };
+
+      myBox.weight = 24;
+
+      myBox.destination1 = "Miami";
+      myBox.destination2 = "San Fancisco";
+      myBox.destination3 = "New York";
+
+
+
+      myBox.volume = myBox.height * myBox.size * myBox.width;
+
+      myBox["# of stops"] = 3;
+
+      myBox["# of books"] = 0;
+
+      function addBook(box, name, writer) {
+        box["# of books"]++;
+        box["book" + box["# of books"]] = {title: name, author: writer};
+      }
+
+      addBook(myBox, "Senhor dos Anéis", "J.R. Tolkien");
+      addBook(myBox, "O cavaleiro inexitente", "Ítalo Calvino");
+
+      for(var i = 1; i <= myBox["# of stops"]; i++){
+        console.log(myBox["destination" + i]);
+      }
+
+      console.log(myBox.book1.title);
+      console.log(myBox["book2"]["author"]);
+
+      delete myBox.contents;
+
+      console.log(myBox);
+      console.log(myBox.size);
+      console.log(myBox["material"]);
+      console.log(myBox.volume);
+    </script>
+  </body>
+</html>

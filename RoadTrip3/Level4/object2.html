@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var aquarium = {
+        Nemo: {type: "fish", species: "clownfish", length: 3.7},
+        Marlin: {type: "fish", species: "clownfish", length: 4.1},
+        Dory: {type: "fish", species: "blue tang", length: 6.2},
+        Peach: {type: "echinoderm", species: "starfish", length: 5.3},
+        "Coral Castle": {type: "environment", material: "coquina", moves: false},
+        "Dragon statue": {type: "toy", material: "plastic", moves: false},
+
+        // note que dentro do aquario a função muda
+        // o que antes era o nome da função, virou o nome da propriedade
+        // existe uma propriedade chamada addCritter
+        // cujo valor é uma função
+        addCritter: function ( name, type, species, length) {
+          this[name] = {type: type, species: species, length: length};
+        }
+      };
+
+      aquarium.addCritter("Bubbles", "fish", "yellow tang", 5.6);
+
+      // essa função foi movida para "dentro do aquário"
+      // note que aqui fora ela recebe o container como primeiro parâmetro
+      // dentro do aquario, ela usa o this, o que dá um efeito equivalente
+      // function addCritter(container, name, type, species, length) {
+      //   container[name] = {type: type, species: species, length: length};
+      // }
+
+      function addToy(container, name, type, material, moves) {
+        container[name] = {type: type, material: material, moves: moves}
+      }
+
+      // criando dinamicamente uma função para remover elementos do aquário
+      // essa função terá uma repetição proposital
+      // para assimilar melhor o código
+
+      // essa é a primeira versão da função
+      // ela não guarda o nome do objeto retirado
+      // quando ela é chamada
+      // aquarium.takeOut = function (name) {
+      //   var temp = this[name];
+      //   delete this[name];
+      //   return temp;
+      // };
+
+      // segunda versão da função
+      // note que tem uma linha a mais
+      aquarium.takeOut = function (name) {
+        this[name].name = name; // essa linha retem o nome do objeto removido
+        // esse comentário explica a linha acima
+        // o this[name] acha o objeto a ser removido (a propriedade)
+        // o .name em seguida dele cria uma propriedade dinamicamente
+        // essa é a propriedade que queremos exibir
+        // o terceiro name da linha é o parâmetro da função
+        var temp = this[name];
+        delete this[name];
+        return temp;
+      };
+
+      var fishOutOfWater = aquarium.takeOut("Marlin");
+
+      console.log(aquarium);
+      console.log(fishOutOfWater);
+    </script>
+  </body>
+</html>
