@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <script>
+         var lorem1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+         var lorem2 = "Aenean sed nibh accumsan, lobortis neque dapibus, sodales tellus.";
+         var lorem3 = "Sed faucibus ante a diam gravida, viverra sodales ex commodo.";
+         var lorem4 = "Vestibulum feugiat urna nec justo commodo, id sodales diam mollis.";
+
+         String.prototype.countChar = function (letter) {
+            var letterCount = 0;
+            for(var i = 0; i < this.length; i++){
+               if(this.charAt(i).toUpperCase() == letter.toUpperCase()){
+                  letterCount++;
+               }
+            }
+            return letterCount;
+         };
+
+         console.log(lorem1.countChar("l"));
+      </script>
+   </body>
+</html>
