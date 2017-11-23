@@ -14,6 +14,11 @@
          magicShoe.travelAction = "click heels";
          magicShoe.actionsRequired = 3;
          console.log(magicShoe);
+         console.log(Object.prototype.isPrototypeOf(shoe)); // true
+         console.log(shoe.isPrototypeOf(magicShoe)); // true
+         console.log(magicShoe.isPrototypeOf(shoe)); // false
+         console.log(Object.prototype.isPrototypeOf(magicShoe)); // true
+
       </script>
    </body>
 </html>

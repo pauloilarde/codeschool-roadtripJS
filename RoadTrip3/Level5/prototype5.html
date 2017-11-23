@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <script>
+         function Shoe(shoeSize, shoeColor, forGender, constructStyle) {
+
+            this.shoeSize = shoeSize;
+            this.shoeColor = shoeColor;
+            this.forGender = forGender;
+            this.constructStyle = constructStyle;
+
+            this.putOn = function () { alert("Shoe's on!"); };
+
+            this.takeOff = function () { alert("Uh, what's that smell?"); };
+         }
+
+         var beachShoe = new Shoe(10, "blue", "women", "flipflop");
+         beachShoe.putOn();
+         beachShoe.takeOff();
+         console.log(beachShoe);
+
+         beachShoe.straps = 2;
+         
+      </script>
+   </body>
+</html>

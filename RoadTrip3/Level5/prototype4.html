@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <script>
+         var shoe = {size: undefined, gender: undefined, construction: undefined};
+
+         var mensBoot = Object.create(shoe);
+
+         mensBoot.size = 11;
+         mensBoot.gender = "men";
+         mensBoot.construction = "boot";
+         console.log(mensBoot);
+
+         var flipFlop = Object.create(shoe);
+
+         flipFlop.size = 5;
+         flipFlop.gender = "women";
+         flipFlop.construction = "flipflop";
+         console.log(flipFlop);
+      </script>
+   </body>
+</html>
