@@ -41,7 +41,29 @@
 
          var twister = new Tornado("F5", cities, 220);
 
-         console.log(twister.toString());
+         Object.prototype.findOwnerOfProperty = function (propName) {
+            var currentObj = this;
+            while (currentObj !== null) {
+               if(currentObj.hasOwnProperty(propName)){
+                  return currentObj;
+               } else{
+                  currentObj = currentObj.__proto__;
+               }
+            }
+            return "No property found";
+         };
+
+         console.log(twister.findOwnerOfProperty("valueOf"));
+         console.log(twister.findOwnerOfProperty("goToOz"));
+
+         console.log("----------------------");
+
+         console.log(twister.constructor);
+         //console.log(twister.constructor.prototype);
+         // a linha acima faz a mesma coisa que a linha: console.log(twister.__proto__);
+         console.log("----------------------");
+         console.log(twister.__proto__);
+
       </script>
    </body>
 </html>
